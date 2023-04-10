@@ -1,10 +1,11 @@
 #include "tylypahka.h"
 #include <iostream>
+#include <conio.h>
 using namespace std;
 
 string sauva(string t, string n){
     string tyyppi = t;
-    string nimi = n;
+    std::string nimi = n;
     string sauva = "";
 
     std::cout << "Jokainen " + tyyppi + " tarvitsee taikasauvan." << std::endl;
@@ -16,17 +17,16 @@ string sauva(string t, string n){
         std::cout << "*" << std::endl;
         }
 
-    char eka;
-    nimi[0] = eka;
+    char eka = nimi[0];
 
     std::string ekatKirjaimet, tokatKirjaimet;
     ekatKirjaimet = "ABCDEFGHI";
     tokatKirjaimet = "JKRLMNOPQR";
 
-    if (ekatKirjaimet.find(eka)) {
+    if(ekatKirjaimet.find(eka) != std::string::npos){
         sauva = "lohikaarmeen sydanjuuresta";
     }
-    else if (tokatKirjaimet.find(eka)) {
+    else if(tokatKirjaimet.find(eka) != std::string::npos){
         sauva = "yksisarvisen hantajouhista";
     }
     else {
